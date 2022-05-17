@@ -1,0 +1,40 @@
+---
+title: "Project 4: Storytelling With Maps"
+author: "Eryn Wali"
+date: "17/05/2022"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Introduction 
+The Partition was a divide that displaced approximately 15 million people, killed more than a million and left a legacy of bloodshed that has transpired into instances from microaggressions to full blown attacks against certain religions till date. It is necessary for us to recognize and acknowledge the effect that the British had on Indians during the partition. A reliable method of doing so is relying on the literature that was produced around and post that time. Mohinder Singh Sarna and Sadat Hassan Manto are two brilliant authors who have illustriously depicted the toil and turmoil of people’s lived experiences through riots, casualties and terror. In my last project, I thought it to be appropriate to inquire into the effect that interpersonal relationships had on religious syncretism. My team and I concluded that interpersonal harmony can have a positive effect on religious syncretism, which might be even greater than religious harmony. While I was still interested in the above topic, we did not have enough data to draw a beneficial conclusion - the instances of religious syncretism in general were quite low. Hence, this time around, I wanted to focus more on the correlation between interpersonal and religious conflicts in certain areas. 
+
+
+# Question 
+To what extent are interpersonal and religious conflicts spatially correlated? 
+
+# Hypothesis 
+There will be more religious conflicts in metropolitan areas as a result of big city anonymity and due to a lack of general educational infrastructure. Hence, there will be more interpersonal conflicts that occur in rural areas. 
+
+# Desired Map 
+A map of the administrative areas weighted by population density to distinguish between urban and rural areas and a layer with a count of the interpersonal and religious conflicts that occur over there. 
+
+# Generated Map
+![Figure 1: Interpersonal v/s Religious Conflicts per Administrative Area](/Users/erynw/OneDrive/Desktop/intro to digital humanities/qgis_map_final/map_image.png)
+
+# Analysis 
+The map I created to prove my hypothesis involved 2 main aspects: A choropleth with population density to distinguish between urban and rural areas and a count of religious conflicts and a count of interpersonal conflicts. I wanted to use the population density as a measure to decide whether an area was urban or rural: if a place has a higher population density, it is more urban than places with less amounts of people inhabiting it. Since I didn’t have a CSV file with the actual population density of India during the partition, I decided to make a relative scale of the population in Sarna and Manto’s books. To do so, I counted the distinct characters present in each administrative area to represent the population of the same. In retrospect, this methodology was not the best way to go about the problem since it would not have reflected the actual population of those areas. For instance, if multiple stories in Manto’s books were based in Rawalpindi with multiple characters, it would be considered an “urban” place, even if that weren’t the case in real life. After calculating the distinct characters per administrative area, I created a choropleth layer for the same with an increase in the intensity of the color green for a higher population. On top of this, I decided to filter through the conflicts and created two counts for Interpersonal Conflict and Religious Conflict respectively. I plotted them onto the administrative areas they happened in. Since multiple conflicts occured in the same areas, I settled on playing with the opacity for each event. Hence, if there is an excessive intensity of color in a particular area, more conflicts eventuated there. Lastly, while creating the final layout, I added a label with the religion associated with each kind of conflict that occurs in each respective area. 
+
+Through this visualization, we can clearly see that there is a high population density at areas next to India’s north border. According to my definition of urban, this means that there are more urban areas next to the north border. It also follows that there are more general conflicts that happened in these areas. However, an outlier that can be found is that the administrative area with the highest population density (180-187) has a relatively low amount of general conflicts. The next thing to note is that places with higher population densities i.e. urban areas (60-80 to 180-187) have an equally high amount of BOTH interpersonal and religious conflict. I’m assuming that this comes from the conflict type of Interpersonal|Religion that was separated and added to both the filters. Apart from this, it is a pattern that low population density areas i.e. rural areas have more instances of religious conflict as compared to having interpersonal conflicts. This is the complete opposite of my hypothesis. To further investigate this, I added labels onto each conflict type. The interpersonal conflict that took place in “urban” areas mainly stemmed from two religions - Muslims and Sikhs. Contrastingly, most religious conflicts that transpired in rural areas were associated with Hindus. To conclude, urban areas had more cases of interpersonal conflict analogous with Muslims and Sikhs, while rural areas had more cases of religious conflict linked to Hindus. 
+
+# Reflection 
+I had a lot of challenges while working with QGIS: the first and foremost being that it refused to run on my laptop, the second being that it kept crashing. However, I knew that this would be a problem as QGIS was open-source and used multiple failsafe methods to prevent my data from being wiped out. 
+
+After eventually finding a machine that could properly run the software, I realized that the entire process was quite fruitful. A visual depiction of the data that we had been building upon all semester allowed me to get insights that I would not have gotten through the other softwares that we had used. Furthermore, I really enjoyed the amount of personalisation one could bring forth to their maps and the nuance you could provide to the query you wanted to research. The possibilities are truly endless. I would love to further explore the tools that QGIS has to offer in terms of data visualization (on a machine that supports it). 
+
+In terms of the data itself, I found that we did not have sufficient entries to largely make an educated conclusion from. In the previous projects I worked on, we had a database of 10+ books according to the authors we chose. Instead, this project just had a collection of short stories by 2 authors. While this did not truly affect the visualization aspect of the data, it resulted in a result that could be contested against. For instance, in my map itself, the amount of data that I had for interpersonal conflicts was quite limited as compared to the plethora of data I had for religious conflicts. 
+
+All in all, I really enjoyed working on this project since it gave me a great insight into what the Partition was like for multiple religions, and how personal dynamics also came into play.
